@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mémoire de Recherche FERREIRA</title>
+    <style type="text/css"></style>
+    <link rel="stylesheet" type="text/css" href="/C:\Users\tom-f\Downloads\www.howtocreate.co.uk\www.howtocreate.co.uk\styles\nostalgic.css">
+    <link rel="author" title="Author information" href="/bio.html">
+    <link rel="copyright" title="Script license and terms of use" href="/jslibs/termsOfUse.html">
+    <link rel="home" title="How To Create home" href="/">
+    <link rel="search" title="Search this site" href="/tutorials/">
+    <link rel="bookmark" href="#content" title="Skip navigation">
+    <link rel="bookmark" href="#index" title="Navigation">
+
+    <link rel="up" title="JavaScript Libraries" href="/jslibs/">
+
+    <title>Paradoxe dé(s)matérialités du numérique à l'aire post-digital</title>
+    <style type="text/css">
+        table,
+        td {
+            border: 0px solid #000;
+            border-collapse: separate;
+        }
+
+        td {
+            padding: 0px;
+        }
+
+        td td td {
+            padding: 2px;
+        }
+
+        td * {
+            line-height: normal;
+        }
+    </style>
+    <script type="text/javascript">
+        var myalternative = "pop-up.js";
+    </script>
+    <script src="pop-up.js" type="text/javascript"></script>
+    <script src="displayBasedMenu.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+
+    <h1>Paradoxe dé(s)matérialités du numérique à l'ère post-digital</h1>
+
+
+    <!-- DO NOT follow this link - anti spider abuse -->
+    <div style="display:none;speak:none;"><a href="/spdrwarn.html" onclick="return false;"></a></div>
+
+    <div id="index">
+
+    <h2>IA STATUT</h2>
+<div id="status">
+   <p> Statut de l'IA: <!-- Le statut du notebook sera affiché ici -->
+   </p>
+</div>  
+
+    <h2>Bibliographie </h2>
+    <p> 
+       1.Gregory Chatonsky, « Matérialités », site de l’artiste, URL :
+<a href=" https://chatonsky.net/materialites/">Site</a>
+
+       , Consulté le 06/07.2023 <br>&nbsp;<br>
+       2.  Table Ronde animée par Lionel Naccache, Que Signifie « accéder au réel », La Villa Gillet, Festival Mode d’emploi, l’Hôtel de région, Lyon, 02 décembre 2012. Rediffusion vidéographique de la table ronde URL : 
+       <a href="https://www.youtube.com/watch?v=0tiVOdQ_t2k&ab_channel=Lavillagillet">Site</a>
+
+
+<br>&nbsp;<br>
+       3. Stiegler, Bernard. « Sortir de l’anthropocène », Multitudes, vol. 60, no. 3, 2015, pp. 137-146.<br>&nbsp;<br>
+
+    </p>
+
+    <p>                                                                         
+    </p>
+
+    
+    </div>
+
+    <div id="content">
+         <div>
+    <label for="question">Posez une question :</label>
+    <input type="text" id="question" placeholder="Votre question...">
+    <button onclick="poserQuestion()">Poser la question</button>
+             
+</div>
+
+<div id="loading" style="display: none;">
+ <p>Loading...</p>
+</div>  
+
+<div id="reponse-box">
+    <!-- La réponse de l'IA sera affichée ici -->
+</div>
+
+<script>
+    function poserQuestion() {
+        // Récupérez la question depuis l'input
+        var question = document.getElementById("question").value;
+        var loading = document.getElementById("loading");
+        loading.style.display = "block";
+
+        // Effectuez une requête AJAX vers l'API Flask
+        fetch('https://e72e-104-197-234-212.ngrok-free.app/ask', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 'question': question }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Affichez la réponse dans la boîte de réponse
+            document.getElementById("reponse-box").innerHTML = "Réponse : " + data.response;
+            loading.style.display = "none";
+        })
+        .catch((error) => {
+            console.error('Erreur lors de la requête:', error);
+        });
+    }
+
+    function updateStatus() {
+    fetch('https://e72e-104-197-234-212.ngrok-free.app/status', {
+        method: 'GET',
+        })
+    .then(response => response.json())
+    .then(data => {
+        // Mettez à jour dynamiquement le statut de l'IA sur votre site Web
+        // Par exemple, vous pouvez changer le texte d'un élément HTML
+        document.getElementById("status").innerText = data.status;
+    })
+    .catch((error) => {
+        console.error('Erreur lors de la requête:', error);
+    });
+}
+
+// Appelez la fonction updateStatus pour mettre à jour le statut de l'IA lors du chargement de la page
+updateStatus();
+
+setInterval(updateStatus, 10000);
+
+</script>
+
+
+        <h3>IA 1: Norma</h3>
+        <div>
+        <input type="text" id="question-input" placeholder="Posez votre question...">
+        <button id="ask-button">Poser</button>
+    </div>
+    <div class="answer-box">
+        <p id="answer"></p>
+    </div>
+        <h3>IA 2: Cont</h3>
+        <div>
+        <input type="text" id="question-input" placeholder="Posez votre question...">
+        <button id="ask-button">Poser</button>
+    </div>
+    <div class="answer-box">
+        <p id="answer"></p>
+    </div>
+        <h3>IA 3</h3>
+       <div>
+        <input type="text" id="question-input" placeholder="Posez votre question...">
+        <button id="ask-button">Poser</button>
+    </div>
+    <div class="answer-box">
+        <p id="answer"></p>
+    </div>
+
+
+        <h2>Avant-propos</h2>
+        <p>
+            Cette GAN a été entrâinée et developpé uniquement en anglais, ainsi elle n'a pas été developpé pour du multilangue. Néanmoins, le modèle d'apprentissage situé en profondeur de cette GAN est le modèle davinci-ada qui comprend bien le français, mais nous vous invitons à poser vos question en anglais pour de meilleurs résultats.
+        </p>
+
+        <p>orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae velit a velit pellentesque cursus.</p>
+
+        <p><strong>Pour aller plus loin.</strong></p>
+
+        <p>
+            l'Ensemble de ce site internet et de ces chatbot IA ont été programmé pendant trois longue année. Mes premières recherche en IA sont né avant l'arrivée de Chat-GPT. Mes premier aboutissant datant d'août 2022 utilisant le modèle GPT2 sont antécédant à l'arrivée de chat-gpt en decembre 2022.
+        </p>
+        <p>
+            orem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae velit a velit pellentesque cursus. Proin gravida sollicitudin vestibulum. Aliquam magna purus, congue euismod tincidunt ut, molestie quis leo. Nam ipsum augue, tempor ac sem tincidunt, sodales dapibus purus. Donec sit amet nisl a urna bibendum semper a et eros. Aliquam erat volutpat.
+        </p>
+        <p>
+            (Note that due to limitations in the table algorithm that I have not been able to work around, this script will work best on pages being displayed in quirks mode [unlike this page].)
+        </p>
+        <h2> Introduction</h2>
+        <p>
+            <a href="javascript:showMinWin('MWJminiwinMAX1','MWJminiwinMIN1');">Origine de l'objet de recherche</a>
+        </p>
+        <p>
+            <a href="javascript:showMinWin('MWJminiwinMAX2','MWJminiwinMIN2');">Etat de la recherche</a>
+        </p>
+        <p>
+            <a href="javascript:showMinWin('MWJminiwinMAX3','MWJminiwinMIN3');">Etat de la recherche (suite)</a>
+        </p>
+
+        <p>
+            <a href="javascript:showMinWin('MWJminiwinMAX4','MWJminiwinMIN4');">Problématique et Méthodologie de la recherche.</a>
+        </p>
+       
+        <script type="text/javascript">
+            // Nouvelle fonction pour définir le chemin du fichier HTML
+    function setHtmlFilePath(path) {
+        window.htmlFilePath = path;
+    }
+
+    // Appel de la fonction pour définir le chemin du fichier HTML
+    setHtmlFilePath('movablewindow.html');
+
+            //put in the image location for the right arrows (width,height,location)
+            var contNt = new displayBasedMenu('miniwinimages/rightAr.gif', 'miniwinimages/rightArW.gif');
+
+            //define the structure
+            contNt.sub[0] = new displayBasedSub('File');
+            contNt.sub[0].sub[0] = new displayBasedSub('New', 'alert(\'You chose \\\'Voulez-vous effacer cette introduction ?\\\'\')');
+            contNt.sub[0].sub[1] = new displayBasedSub('Open');
+            contNt.sub[0].sub[1].sub[0] = new displayBasedSub('From the World Wide Web');
+            contNt.sub[0].sub[1].sub[0].sub[0] = new displayBasedSub('My website', 'window.open(\'https://ferreirathomasarts.wordpress.com/\')');
+            contNt.sub[0].sub[1].sub[0].sub[1] = new displayBasedSub('Internet', 'window.open(\'http://www.google.com/\')');
+            contNt.sub[0].sub[1].sub[1] = new displayBasedSub('From disk', 'window.open(\'C:\Users\tom-f\Downloads\www.howtocreate.co.uk\www.howtocreate.co.uk\styles\images\img1\')');
+            contNt.sub[0].sub[2] = new displayBasedSub('Close', 'hideMinWin( \'MWJminiwinMAX1\' )');
+            contNt.sub[1] = new displayBasedSub('Edit');
+            contNt.sub[1].sub[0] = new displayBasedSub('Cut', 'alert(\'Cannot cut\')');
+            contNt.sub[1].sub[1] = new displayBasedSub('Copy', 'alert(\'Cannot copy\')');
+            contNt.sub[1].sub[2] = new displayBasedSub('Paste', 'alert(\'Cannot paste\')');
+            contNt.sub[2] = new displayBasedSub('Advanced');
+            contNt.sub[2].sub[0] = new displayBasedSub('Options', 'if(confirm(\'rien a voir\')){alert(document.body.innerHTML);}');
+            contNt.sub[3] = new displayBasedSub('Help');
+            contNt.sub[3].sub[0] = new displayBasedSub('About this program', 'alert(\'This program was written by Thomas FERREIRA\');');
+
+            createMiniWinLayer(
+            '<h3> Introduction.</h3> <br>&nbsp;<br><h4>1. Origine de l’objet de recherche.</h4> <p class="justify-text">Nous débuterons cette introduction en explorant la genèse de ce projet de recherche, né de la résonance d&rsquo;une expérience sensible qui s&rsquo;intègre à notre contemporanéité, impulsée par cette expérience. Retournons brièvement dans le temps: fin 2020, alors que je me préparais pour le jury d&rsquo;équivalence de ma quatrième année en double cursus à l&rsquo;École Supérieure Dart du Nord-Pas-de-Calais Dunkerque/Tourcoing (Esä), j&rsquo;ai créé un portfolio. Cependant, un évènement innatendu se produisit lorsque le disque dur contenant toutes mes données personnelles depuis 2017 cessa de fonctionner. Huits cents gigaoctets d&rsquo;informations universitaires, de photographies personnelles et professionnelles ont été irrémédiablement perdus. Ce disque dur renfermait également des notes et prémices de projets artistiques aujourd&rsquo;hui disparus. Lorsque de tels appareils dysfonctionnent, ils nous renvoient à notre propre condition, vouée elle aussi à la dysfonction.</p><br> <p class="justify-text">Ce triste &eacute;pisode de perte de données trouve un &eacute;cho dans les r&eacute;flexions de Gregory Chatonsky, qui a explor&eacute; une m&eacute;saventure similaire qui donne naissance &agrave; son œuvre <a href="http://chatonsky.net/noises/" target="_blank"> My hard drive is experiencing some strange noises, 2007</a>. De cette œuvre d&eacute;coulera une r&eacute;flexion approfondie sur la mat&eacute;rialit&eacute; du num&eacute;rique dans son essai titr&eacute; de toute fa&ccedil;on <a href="https://chatonsky.net/materialites/" target="_blank">&laquo; Mat&eacute;rialit&eacute;s&raquo</a>; que l’on &eacute;tudiera dans la deuxième partie de cette introduction. Lorsqu&rsquo;un support artificiel de m&eacute;morisation dysfonctionne, il nous invite &agrave; r&eacute;fl&eacute;chir aux diff&eacute;rences fondamentales entre la m&eacute;moire artificielle et la m&eacute;moire organique. De fait bien trop souvent, l’image que l’on porte commun&eacute;ment sur la m&eacute;moire organique tend &agrave; l’imaginer semblable &agrave; la m&eacute;moire num&eacute;rique : objective et fonctionnant par enregistrement. Nous nous permet un stock de souvenir ordonn&eacute; que l’on aurait capt&eacute; avec les cameras de nos yeux. . Or, notre mémoire organique est lacunaire. Du moins,telle est la position qu’avance les travaux de <a href="https://www.youtube.com/watch?v=0tiVOdQ_t2k&ab_channel=Lavillagillet">Lionel Naccache, mentionnés dans son intervention à la Villa Gillet de Lyon</a><sup>2</sup>, où il offre des perspectives sur la manière dont nousnous remémorons nos souvenir en une sorte de réactivation. Si bien, qu’à chaqueréactivation d’un souvenir, nous reconstruisons notre expérience mémorielle, stockant cessouvenirs sous des formes constamment changeantes par rapport aux traces initiales qu&rsquo;ils ont laissées. Si nous devions ainsi reporter ce fonctionnement à la mémoire numérique, cela reviendrait à imaginer une réécriture complète d’un fichier numérique à chacune de ces ouvertures, un processus nécessitant d’effacer des données pour en produire des nouvelles. Néanmoins, elle se rejoignent en un point, elles sont toutes deux voués à dysfonctionner. Le dysfonctionnement de la mémoire numérique soulève des questions essentielles, qu’en à notre dépendance aux supports externes de mémorisation, que Bernard Stiegler aborde en discutant des pharmaka <a href="https://www.cairn.info/revue-multitudes-2015-3-page-137.html">« le pharmakon, c’est l’artefact qui est la condition de l’hominisation mais qui produit toujours à la fois de l’entropie et de la néguentropie, et qui menace toujours l’hominisation »</a><sup>3</sup> éclaire la compréhension du rôle des artefacts dans le processus d&rsquo;hominisation, particulièrement dans le contexte des mémoires numériques. Dans cette perspective, les pharmaka peuvent être appréhendés comme des artefacts permettant une substitution mémorielle, notamment incarnés par les dispositifs de stockage numérique. Les mémoires de stockage numérique, en tant que pharmaka, jouent un rôle essentiel dans la condition humaine contemporaine D’une part, ils sont les supports de l’hominisation, facilitant l’externalisation objective et la préservation de la mémoire individuelle et collective. Cependant, ces artefacts numériques introduisent une dualité inhérente, générant à la fois de l’entropie et de la néguentropie. L’entropie se manifeste lorsque ces dispositifs dysfonctionnent, illustré par l’incident de perte de données mentionné précédemment. La défaillance d’un disque dur, avec la disparition irréversible d’informations, expose la fragilité de notre dépendance à ces pharmaka. Cette entropie menace la stabilité de notre rapport à la mémoire, soulignant la vulnérabilité de la condition humaine dans l’ère numérique. D’un autre côté, la néguentropie se matérialise dans la capacité des mémoires numériques à organiser, stocker et préserver l’information. Ces dispositifs permettent une conservation quasi infinie des données, créant une surabondance d’informations. De part cette neguentropie, ces pharama sont les produit d’un profond changement sociétal que Maurizio Ferraris intitule la révolution documédiale : <a href="https://journals.openedition.org/estetica/7070?lang=en">« Aujourd’hui, une nouvelle capitale se profile à l’horizon, la Capitale Documediale : elle produit des documents, génère une mobilisation et ne fait aucun bruit»[Traduction Libre]</a><sup>4</sup>. Ce changement sociétal <a href="https://journals.openedition.org/estetica/7070?lang=en">«n’est pas une nouvelle version de l’aliénation technologique.»</a><sup>5</sup>, mais plutôt une mutation vers une société hypermnésique<sup>6</sup>, où l’oubli devient rare, menaçant ainsi la subjectivité individuelle. Cette mémoire absolue et objective qu’est le BigData dispense en quelque sorte l’individu à se souvenir, notion que l’on retrouve notamment dans la science-fiction d’Alain Damasio : « Scarlett et Novak »<sup>7</sup> où le héro est dépossédé de son Smartphone connecté à un cloud généralisé, au-delà de la connaissance absolu, il est déposséder de sa propre mémoire et identité. N’ayant jamais eu le besoin de retenir en sa mémoire ne serait ce que la route jusqu’à son domicile, n’ayant jamais eu à se perdre pour retrouver son chemin, cette simple tache lui est impossible. La société contemporaine est confrontée à une surabondance d’informations que nous ne savons pas gérer, rappelant l’importance de l’oubli dans le processus de mémorisation. La mémoire artificielle se caractérise par son objectivité absolue, son potentiel infini mais aussi son potentiel plastique, autorisant diverses manipulations et traitements automatisés, il ne faudrait pas oublier que cette mémoire est une somme de bits informatiques que l’on peut moduler. Ces réflexions éclairent la matérialité particulière des données numériques, inscrites sous forme de signaux électromagnétiques dans des disques durs et interpellent notre capacité à les faire parler de notre mémoire. La matérialité insaisissable des données numériques, tout en étant présente dans des machines, questionne la notion d’archive numérique et le stockage de ces données. La nature paradoxale du matériau numérique, à la fois insaisissable et incarnée dans des artefacts, révèle son caractère fluide et plastique. Ce caractère insaisissable permet à Gregory Chatonsky de se poser la question suivante : comment cette conception oppose à tort la matérialité faible du numérique à la matérialité forte de l’œuvre d’art? Gregrory Chatonsky rappelle que le numérique possède sa propre matérialité : <a href="https://chatonsky.net/materialites/">« il y a un doublement de la matérialité par le biais d’une traduction : le code s’exprime sous la forme de pixels »</a><sup>8</sup>, le code s’exprime à travers des surfaces matérielles d’inscription, telles que les pixels d’un écran. Cette remise en question soulève des questions essentielles sur les différentes strates de matérialité et amorce notre réflexion tendant à souligner que c’est en raison de sa fragilité, que le numérique peut être considéré comme "plus" matériel car <a href="https://chatonsky.net/materialites/">« si on modifie une toute petite part de sa matérialité, par exemple sur le disque dur, le fichier devient purement et simplement inaccessible. Son hypermatérialité est liée au décrochage entre la surface d’inscription et la quantité de code »</a><sup>9</sup>.</p><br><p><p class="justify-text">Ainsi, dans cette exploration des méandres de la mémoire numérique, nous avons navigué à travers les dédales de la perte et du deuil, confrontés à la fragilité de notre dépendance aux supports numériques. Cette réflexion sur la matérialité du numérique, initiée par une expérience personnelle, se trouve intimement liée aux questions fondamentales de l’entropie et de la néguentropie. Cette dualité inhérente aux pharmaka numériques met en lumière les paradoxes de notre époque, où l’abondance d’infor mations coexiste avec la vulnérabilité de la mémoire individuelle. En cela, nousen revenons à cette expérience sensible personnelle initiant cette recherche. Comme face à un décès et se sentant dépossédé de sa propre mémoire, il nous faut faire un deuil. Passant par l’étape du déni, en cherchant tous les moyens possibles et imaginables pour retrouver les données perdues, pour finir par l’acceptation de la disparition. Cette dernière étape, pour ma part, s’est faite par le biais de la rédaction d’un annuaire de cette disparition, mais non pas comme l’Inventaire des destructions que Eric Watier créé pour recenser des cas de destruction volontaires d’œuvres par leurs artistes. Ici, l’idée était de recenser ce qui a été et ce qui n’a jamais pu exister qu’à l’état de concept, immatériel. Ce processus d’annuaire permet dans un premier temps de classifier la perte de données, dans un second temps, d’avoir une introduction sensible exploitable notamment au sein de ma licence 3 Arts Plastiques et Visuel dans la rédaction d’un ensemble partiel sur ce qui sert aujourd’hui de préambule à ma recherche: la thématique de la trace de l’image numérique: « À une époque où nous sommes assommés par une consommation d’images digitales, nous sommes en droit de nous demander quelles sont les traces que laissent ces images. Au-delà de l’empreinte environnementale qu’implique cette surabondance d’image due notamment à l’ère du numérique, qui implique un stockage par milliard dans des serveurs. Comment pouvons-nous nous retrouver dans cette masse d’image, 100 millions d’images sont échangées par heure sur Internet, la problématique de l’archive n’en est donc que plus importante aujourd’hui, nous ne serons plus en capacité de garder toutes ces images. Comment choisir celles qui doivent disparaître, devons-nous faire prévaloir certaines images sur d’autres ? Alors, que faire de ces images, et surtout comment conserver les images ? » Ainsi, naît l’hypothèse suivante: faut-il une archive de l’archive, faire la trace d’une trace car si tout est voué à l’entropie, comment transmettre? C’est donc sous cet ensemble de questions que les premiers projets artistiques produits dans le cadre de ma Licence 3 Art Plastiques et Visuels émergent. Timekeeper at « espace culture » after Pierre Huyghe, produite en mars 2021 proposait aux spectateurs de l’exposition Starter 7, d’expérimenter le processus de destruction, en détruisant et en morcelant un ensemble d’image d’archive, le spectateur en sauve une partie, de fait à la fin de l’exposition cet ensemble d’image serait dans tous les cas détruit. 25cm3 of my photo server réalisé en décembre 2020 envisage une solution paradoxale de conservation de l’image en la rendant non visible. Tel un serveur qui ne stock qu’un ensemble de fichier sous formes de bits et donc ne donnant rien à voir visuellement, cette pièce proposait de stocker un certains nombre d’images sceller dans un bloc de béton. Cette recherche plastique était donc principalement orienté vers la volonté de trouver une solution aux problèmes liés à la trace numérique et au caractère invisible de l’image numérique sans pour autant avoir en connaissance le concept d’« Image-transaction » qu’Ingrid Hoelzl développe dans la revue Multitudes10. De fait, Ingrid Hoelzl définie le concept d’image-transaction comme une forme particulière de relationalité et de capacité d’agir que l’image acquiert dans les réseaux numériques et « implique une négociation constante entre les parties prenantes, et [qui] remet en question la notion de transparence et de vérité dans l’image »11 pour appuyer cette thèse l’auteur cite Harun Farocki : « l’ordination n’a pas besoin de voir les images qu’il traite ». Pour un ordinateur, l’interaction machine à machine ne nécessite pas de visualisation en tant que pixel pour comprendre et transmettre un fichier image, l’image numérique n’est pas visible au sens où nous l’entendons humainement. En somme, malgré sa capacité active à fragmenter, dissoudre et disséminer les faits, tout en déterritorialisant la mémoire, ces données numériques demeurent insaisissables dans leur matérialité, conférant ainsi un caractère impalpable. Cela découle de l’apparente impermanence des flux de données, une dynamique qui va à l’encontre de la conception traditionnelle de l’archive numérique, laquelle suppose néanmoins un certain type de stockage. Pour finir avec les origines de cette recherche, je dirais quel naît dans sa reflexivité actuelle lors de la découverte au cours de la co-réalisation d’une table ronde à l’initiative de Carlijn Juste sur la thématique du numérique, de la conférence introductive Les mondes numériques de l’art contemporain (2016) menée par Béatrice Joyeux-Prunel et Alexandre Cadain.J’y découvre pour la première fois la citation qui alimentera mon désir de recherche plastique, de recherche théorique sur le point de contact entre numérique et physique :', //The text to be written in the main part of the mini window (can contain HTML)
+                'Windows 95', //The text to be written in the title bar of the mini window
+                20, //Distance from the left edge of the page to start
+                25, //Distance from the top edge of the page to start
+                680, //Width of the mini window
+                '#00007f', //The background colour of the title bar of the mini window
+                '#ffffff', //The background colour of the main part of the mini window
+                'miniwinimages/logo.png', //The location of the logo image in the top left corner (16px x 16px)
+                'miniwinimages/min.gif', //The location of the minimise image (16px x 16px)
+                'miniwinimages/restore.gif', //The location of the restore image (16px x 16px)
+                'miniwinimages/cross.gif', //The location of the 'close window' image (16px x 16px)
+                'miniwinimages/max.gif', //The location of the maximise image (16px x 16px)
+                'miniwinimages/handle.gif', //The location of the drag handle image (8px x 8px) - '' if not resizable
+                1, //Initial window visibility (0 = hidden, 1 = maximised, 2 = minimised)
+                false, //Dragable portion (true = entire window, false = title bar only)
+                //Some browsers may have problems using the minimise/maximise/close buttons
+                //if you use entire window.
+                contNt.getMenuCode(), //Only used in DOM browsers - HTML to be put just above the main part of the window -
+                //this MUST NOT contain any 'div' elements - this is designed to be used along with my
+                //display based menu script to provide menus in the mini windows
+                true //Only used in DOM browsers (not Konqueror or IE Mac) - should the window be scrollable
+                );
+
+            createMiniWinLayer(
+                '<h4>2. État de la recherche, cadre théorique :</h4><p class="justify-text">«Comme l’air et l’eau que l’on boit, le numérique ne se remarque que par son absence, jamais par sa présence [Traduction Libre]"12, cette citation de Nicholas Negroponte anime et représente les points de départ de ce projet de recherche. En précurseur, en 1998 Nicholas Negroponte avait préssenti l’importance qu’allait prendre le numérique dans notre monde. Par ailleurs, au travers de ce paradoxe que l’on commentera par la suite, Nicholas Negroponte semble pointer le caractère physique ou du moins appartenant à notre réalité du numérique. Ce qui jusqu’alors n’était pas le cas, comme peuvent le montrer certains écrits ou expositions ayant tenté de définir le changement de paradigme du début du tournant numérique. Il sera émis le postulat selon lequel le numérique est immatériel, cette immatérialité du numérique et donc de la production artistique qui l’utilise comme médium va beaucoup intéresser la communauté artistique et esthétique. Il s’agit de l’utilisation d’un médium transparent qui tend à de s’effacer malgré les tailles imposantes des machines à cette époque. C’est ce même paradoxe qui en 1985 donne naissance à l’exposition Les Immatériaux au MNAM-CCI Centre-Pompidou.Exposition qui tentait d’effectuer une sorte de catalogue des pratiques dites «immatérielles» du numérique et technologique «post-moderne» en effectuant une exposition ayant comme propos une requalification de la matière. En 1985, lorsque Jean-François Lyotard et Thierry Chaput inaugurent l’exposition, ils ont pour objectifs de définir un concept et de restituer une expérience du médium numérique en questionnant la nature même de la substance entre matière et forme ainsi que la nature de l’immédiateté de celui-ci, de sa transparence et de sa disparition. Ils se sont intéressés à la manière dont les artisans du numérique réfléchissent à la façon dont leurs œuvres seront perçues. De fait, le problèmes avec ces œuvres d’art numérique, souvent considérer comme dématérialisées, ne suivent pas le schème hylémorphique de manière stricte. Traditionnellement, l’oeuvre d’art était souvent appréhendée à travers le e schème hylémorphique, qui postule une relation étroite entre la matière (hylé) et la forme (morphé). Rainer Rochlitz rappelle cette ontologie duelle de l’œuvre d’art en écrivant que « l’œuvre d’art fait cohabiter dans un habitacle physique, à la fois un objet ou une inscription matériels, et une articulation intellectuelle, signification, interpellation et ‘’prétention’’ à un type de validité spécifique », « un seul et même objet est citoyen de plusieurs ‘’mondes’’ (celui des objets physiques, celui des normes sociales, et celui d’une subjectivité »13. Cependant, l’écart entre ces deux dimension pousse jusqu’à la scission. De fait, la matière et la forme peuvent être plus difficilement distinguables dans le numérique, car la matière n’est pas nécessairement séparée de la forme, cette dissociation ouvre la voie à une requalification de la matière au-delà du schème hylémorphique, où l’inscription trouve refuge dans l’architecture logicielle, se limitant à la matérialité des données numériques. En ce sens, c’est ce que l’on peut relever de l’entretient porté par Vincent Civilato à Fabien Zocco dont l’artiste semble expliciter que les pièces numériques découlent d’une double modalité, «Comme l’indique Lev Manovich : « Si le monde est constitué, en physique, d’atomes et, en génétique, de gènes, la programmation informatique, elle, incarne le monde selon sa propre logique. Le monde s’y trouve réduit à deux types d’objets complémentaires dans un logiciel : une structure de données et des algorithmes » »14 la substance même du numérique distingue deux modalités d’existence à savoir d’un coté l’architecture logicielle où tout logiciel peut se peut se définir comme l’association d’un flux de données avec une suite d’algorithmes, autonome, collectiviste qui va régir le traitement et la mise en forme de ces données au fil du temps et de l’autre coté ce que l’on pourrait définir comme étant les objets concrets qui incarnent les processus algorithmique, des support d’exemplification. Si bien que Fabien Zocco souligne de lui même la possibilité d’existence de ses propres œuvre en dehors d’une existence objectale : « Si bon nombre de mes travaux peuvent exister de façon purement logicielle (les pièces « branchées » au réseau notamment), je suis de plus en plus attachée à la dimension objectale des artefacts « incarnant » les processus algorithmiques qui sont au fondement de mes projets »15. Fabien Zocco fini par conclure en considérant « Ce caractère double contribue, je pense, à rendre les données numériques éminemment plastiques, et donc propices à nourrir des formes d’expression artistique »16. En regard de ces exemples, l’exposition Les Immatériaux peut être vue comme une tentative de concrétiser cette rupture conceptuelle dans le cadre d’une exposition qui fera date et nourrira les imaginaires des artistes de la génération «Post-digital».<br></br>Au début du tournant numérique, comme tout nouveau bouleversement, ces nouvelles pratiques artistiques se sont vues discréditées. Comme au XXème siècle face au peintre moderne, la photographie s’est vue rejetée de toute forme artistique, la photographie numérique se verra aussi discréditée. L’exemple de la photographie numérique fait converger toutes les critiques de ces médiums. Ainsi, depuis ce moment de changement de paradigme communément appelé « tournant numérique » la photographie fait face à de nombreux questionnements théoriques et pratiques. De fait, par sa simplicité d’usage et sa prolifération, son statut artistique a été rejeté au profit de la photographie argentique, ancrée dans une historicité et considérée comme plus élitiste, difficile et fragile. Ainsi lors de ce tournant du numérique, prenant place entre la fin des années 1980 et le début des années 2000, face à une prolifération et une banalisation de l’acte photographique par sa simplicité d’utilisation, les artistes photographes cherchent à théoriser pour légitimer cette forme, cela passe notamment par la volonté de redéfinir l’acte photographique. Depuis Roland Barthes la photographie est par essence mélancolique, elle renvoie au « ça-a-été » d’un référent indiciel perdu, or avec ce tournant du numérique, Philippe Dubois tente de redéfinir cette essence. De ce fait, la photographie numérique n’est plus l’unique représentation du « ça-a-été » indiciel du référent étant donné qu’il n’est plus fiable en conséquence, nous sommes dans « le monde des possibles » dans une fiction photographique. Ce changement de paradigme évince les questions autour du temps photographique pour consacrer ses recherches autour de la « dématérialisation » et la « re-matérialisation » photographique. Communément, la photographie numérique est considérée comme étant une dématérialisation et ce par son essence même qui transpose la lumière en code informatique puis en pixel. Avec ces deux transpositions on sent que quelque chose se perd, et ce qui se perd n’est autre que la matérialité de l’objet photographique. La perte se ferait donc à l’échelle de la création et du support. Cette idée est celle démontrée par Valerio Vincenzo dans son œuvre Investigations digitales 2. Dans son œuvre réalisée en 2018, il questionne la perte d’informations par la compression de fichier, l’œil humain ne perçoit aucune perte entre l’image compressée et l’image non-compressée pourtant lorsque l’on étudie les codes informatiques qui font l’image on perçoit grandement cette perte. De fait, pour traduire l’image non-compressée en fichier texte imprimé il nous faut un livre de trente-cinq kilogrammes, en comparaison le document compressé représente un livre de huit cents grammes. La dématérialisation pose de nombreuses questions notamment au niveau de l’archive, de la reproductibilité de l’objet d’art, de la conservation… Cette notion de dématérialisation est vue comme étant l’essence du numérique tout comme la mélancolie est l’essence de l’argentique. Néanmoins la question de la matérialité au temps du numérique touche plus la question du support de l’image plutôt que celle de l’essence. Après «la mort de la peinture», vient l’idée de la « mort du tirage photographique ». Des figures telles que Marie Auger s’opposent à cette conception de l’immatériel photographique. Marie Auger défend que le numérique implique l’utilisation de matériaux et donc n’a jamais été immatériel, que chercher sa re-matérialisation est paradoxal. Si la technologie numérique a fait disparaître le support physique du tirage photographique, elle n’a pas été en mesure d’éliminer totalement sa matérialité. Le tirage photographique est un support matériel qui est une interface entre le monde immatériel de l’image numérique et une réalité physique que nous ne pouvons ignorer : nous devons l’alimenter en lumière et autant que nous pouvons l’exposer à ses sources lumineuses. Une image n’a pas besoin d’être imprimée, elle peut être envoyée par e-mail, mais elle a tout de même un support spécifique. Le numérique implique l’utilisation de matériaux qui ne sont pas encore « transparents » parce que « artificiels », le numérique doit nécessairement avoir une dimension matérielle et cela concerne également les équipements photographiques : capteurs, cartes mémoire, ordinateurs ou moniteurs et les appareils photo eux-mêmes. Les questions de la matérialité et du support de l’image sont au centre des interrogations de ces dernières années. Si bien que des concepts cités plus tôt tels que la tridimensionnalité photographique, la re-matérialisation ou l’émergence des anciens procédés annoncent le post-digital dans la re-conception du numérique comme support matériel.<br></br>Nous en revenons ainsi à la citation de Nicholas Negroponte, il s’agit d’un paradoxe assez évident à comprendre, car il est automatique pour tout être vivant d’avoir accès à l’air, mais c’est uniquement quand l’air nous est privé que l’automatisme se rompt et cette rupture lance une alerte inconsciente de survie cherchant à combler ce manque Empruntons à McLuhan la notion selon laquelle les technologie numérique mais aussi l’art, crée un anti-environnement, notion qu’il développe en traitant des technologies satellite « La capsule et le satellite ont créé un nouvel environnement pour notre planète. La planète est désormais le contenu des nouveaux espaces créés par la nouvelle technologie. Au lieu d’être un environnement dans le temps, la terre elle-même est devenue une sonde dans l’espace. En d’autres termes, la planète est devenue un anti-environnement, une forme d’art, une extension de la conscience, donnant lieu à une nouvelle perception du nouvel environnement d’origine anthropique»17. Tout comme la privation d’air rompt l’automatisme naturel, la technologie spatiale et l’art, selon McLuhan, rompent avec l’environnement traditionnel et automatique de la Terre. L’art, en particulier, agit comme une sonde ou un instrument de détection, révélant des aspects de notre environnement que nous ne percevons pas automatiquement. L’art numérique agit alors comme une interface, transformant notre perception sensorielle en mettant en lumière des dimensions autrement invisibles. Ainsi, les artistes numériques deviennent des experts dans la détection des changements de perception, opérant des sondes dans le monde numérique. Néanmoins, considérer la technologie numérique comme issue d’un automatisme est tout sauf induite, en ce qui concerne l’air et l’eau ou l’environnement la réflexion semble banale, pourtant, il n’est pas évident de penser que le numérique est aussi indispensable, et que son absence impacte tant nos vies. Pourtant, nous sommes dans un monde numérique et connecté, les utopies technophiles issues des films de sciences-fictions de la fin du siècle dernier sont notre expérience quotidienne. Aujourd’hui « en [un peu plus de] vingt ans, Internet a accumulé plus de données immatérielles que, ce que l’humanité a produit depuis sa naissance en données physiques»18 cette donnée aussi est en perpétuelle augmentation, et c’est dans ce contexte que l’on voit aujourd’hui de plus en plus d’articles imaginant l’apocalypse que serait la fin subite d’internet. Cette fin, nous avons pu en avoir un aperçu quand le 10 Mars 2021 des serveurs d’un datacenter de l’entreprise OVHclouds à Starsbourg ont brûlé. Bien au-delà de la perte d’OVH ce sont les sites et les applications qu’hébergeait le Datacenter qui ont perdu le plus. Le web français a souffert, les services de bibliothèque en ligne sont ceux ayant le plus souffert de cet embrasement. Les effets du réel ont une emprise sur le virtuel qui lui-même contrôle nos interfaces d’informations et notamment ici, l’interface informationnelle papier qui ne nous était plus accessible pendant l’incident. C’est une perte totale pour ces bibliothécaires qui ont perdu leur catalogue et doivent reprendre depuis zéro, ils ne retrouveront jamais l’énergie physique dépensée pour ces sites web. L’idée que l’information est incontrôlable et indestructible par son essence reproductible est ici remise en question, si les fichiers sources de l’information sont détruits, comment garder traces de celle-ci, les données numériques sont elles aussi vouées à l’entropie par l’immense chaos qui affecte notre quotidien et nos disques dur qui contiennent une partie de notre propre mémoire. C’est en ça que nous sommes dans l’ère du post-digital ou post-internet, il ne s’agit pas de définir un monde après internet mais plutôt à propos de l’internet du moins, c’est bien la première définition du terme Post-internet que Marisa Olson déploie en 2008 dans son essai « POSTINTERNET : art after the internet »19. Le numérique était encore vu au début des années 2000 comme une échappatoire au monde physique : l’exemple le plus probant reste le simulateur de vie SECOND LIFE qui se voulait être un autre monde hors du nôtre. Or, la réalité rattrape le virtuel, nous ne pouvons plus penser deux mondes à part comme nous l’avons vu plus tôt. Le numérique et l’Internet nous font entrer pleinement dans le monde, il en est fini de la peur d’une génération enfermée derrière leurs écrans à ne vivre que depuis un ordinateur. Aujourd’hui nous considérons que le numérique ne crée pas un autre monde comme dans Second Life. Le numérique ajoute une couche de réalité qui nous déterritorialise constamment. Lors du confinement en 2020, nous n’étions pas juste derrière nos écrans, nous étions à fois dans nos domiciles et au bureau ou en salle de classe. <br></br></p>', //The text to be written in the main part of the mini window (can contain HTML)
+                'Windows 95', //The text to be written in the title bar of the mini window
+                420, //Distance from the left edge of the page to start
+                280, //Distance from the top edge of the page to start
+                880, //Width of the mini window
+                '#00007f', //The background colour of the title bar of the mini window
+                '#ffffff', //The background colour of the main part of the mini window
+                'miniwinimages/logo.png', //The location of the logo image in the top left corner (16px x 16px)
+                'miniwinimages/min.gif', //The location of the minimise image (16px x 16px)
+                'miniwinimages/restore.gif', //The location of the restore image (16px x 16px)
+                'miniwinimages/cross.gif', //The location of the 'close window' image (16px x 16px)
+                'miniwinimages/max.gif', //The location of the maximise image (16px x 16px)
+                'miniwinimages/handle.gif', //The location of the drag handle image (8px x 8px) - '' if not resizable
+                1, //Initial window visibility (0 = hidden, 1 = maximised, 2 = minimised)
+                false, //Dragable portion (true = entire window, false = title bar only)
+                //Some browsers may have problems using the minimise/maximise/close buttons
+                //if you use entire window.
+                contNt.getMenuCode(), //Only used in DOM browsers - HTML to be put just above the main part of the window -
+                //this MUST NOT contain any 'div' elements - this is designed to be used along with my
+                //display based menu script to provide menus in the mini windows
+                true //Only used in DOM browsers (not Konqueror or IE Mac) - should the window be scrollable
+            
+            
+            );
+
+            createMiniWinLayer(
+                '<h4>2. État de la recherche, cadre théorique (suite):</h4><p class="justify-text">La notion et le «mouvement» post-digital s’insère dans ce contexte de changement de paradigme et s’oppose à son prédécesseur: le Net-Art qui utilise internet comme outils de découverte que les artistes utilisent comme outils de création, de diffusion et de résistance du marché de l’art en raison de sa «virtualité». Le post-digital décrit un monde ubique où la pratique artistique peut exister tant «en ligne mais qui peut et devrait avoir lieu hors-ligne [Traduction Libre]»20. C’est autour des années 2010 que naît réellement le post-digital avec trois figures : Marisa Olson et son essai «POSTINTERNET: art after the internet » , Gene Mchugh et son blog Post Internet, notes on the Internet and Art 12.09.09>09.05.10 et Artie Vierkant et son essai « The Image Object Post-internet». Ces trois artistes et auteurs avec leurs différents essais instituent une sorte de manifeste de ce mouvement à la fois cosmogonique, esthétique, social et artistique. L’œuvre d’art existe aujourd’hui de manière ubique : «Même si l’artiste ne met pas son travail sur Internet, l’œuvre sera diffusé un jour ou l’autre dans la sphère de l’Internet [Traduction Libre]»21 tout en considérant que «Les objets et les images post-Internet sont développés en tenant compte de leur matérialité particulière ainsi que de leur grande variété de modes de présentation et de diffusion »22. <br></br> Ainsi, le numérique est un élément omniprésent de notre monde moderne, un médium presque immatériel par sa transparence qui se fond dans le tissu de notre réalité. Nous ne prenons conscience de sa matérialité que lorsque cette présence invisible est momentanément altérée,comme lors d’une panne Internet ou d’un dysfonctionnement d’un appareil numérique. C’est alors que nous réalisons que le numérique n’est pas seulement une abstraction, mais une réalité tangible qui régit nos vies. Ce paradoxe de l’immatérialité apparente du numérique, qui ne se manifeste que par son absence, trouve sa résolution dans le concept d’autophagie. L’autophagie numérique est le processus par lequel le numérique se nourrit de lui-même. Cela se produit notamment grâce à Internet, où les données sont constamment collectées, analysées et réutilisées pour alimenter les algorithmes et l’intelligence artificielle. De même, les artistes plasticiens, tout comme les chercheurs, nourrissent leur créativité à partir des œuvres numériques précédentes, créant ainsi une boucle d’autophagie culturelle. Ce processus d’autophagie, loin d’effacer le numérique, le rend plus tangible que jamais. En se nourrissant continuellement de données et d’idées, le numérique se matérialise dans nos vies, devenant une force puissante qui façonne nos expériences. L’intelligence artificielle, par exemple, créer des œuvres dérivées de notre culture et de nos connaissances, fusionnant le numérique avec le concret, le virtuel avec le réel.<br></br>Ainsi, la matérialité du numérique ne réside pas seulement dans ses composants matériels, tels que les serveurs et les dispositifs électroniques, mais aussi dans sa capacité à s’auto-engendrer à travers l’autophagie. Dans cette étude, nous explorerons en profondeur comment ce processus d’autophagie du numérique contribue à sa rematérialisation, tout en redéfinissant notre compréhension de la matérialité à l’ère post-digitale.</p>', //The text to be written in the main part of the mini window (can contain HTML)
+                'Windows 95', //The text to be written in the title bar of the mini window
+                450, //Distance from the left edge of the page to start
+                2550, //Distance from the top edge of the page to start
+                490, //Width of the mini window
+                '#00007f', //The background colour of the title bar of the mini window
+                '#ffffff', //The background colour of the main part of the mini window
+                'miniwinimages/logo.png', //The location of the logo image in the top left corner (16px x 16px)
+                'miniwinimages/min.gif', //The location of the minimise image (16px x 16px)
+                'miniwinimages/restore.gif', //The location of the restore image (16px x 16px)
+                'miniwinimages/cross.gif', //The location of the 'close window' image (16px x 16px)
+                'miniwinimages/max.gif', //The location of the maximise image (16px x 16px)
+                'miniwinimages/handle.gif', //The location of the drag handle image (8px x 8px) - '' if not resizable
+                1, //Initial window visibility (0 = hidden, 1 = maximised, 2 = minimised)
+                false, //Dragable portion (true = entire window, false = title bar only)
+                //Some browsers may have problems using the minimise/maximise/close buttons
+                //if you use entire window.
+                contNt.getMenuCode(), //Only used in DOM browsers - HTML to be put just above the main part of the window -
+                //this MUST NOT contain any 'div' elements - this is designed to be used along with my
+                //display based menu script to provide menus in the mini windows
+                true //Only used in DOM browsers (not Konqueror or IE Mac) - should the window be scrollable
+                );
+
+            createMiniWinLayer(
+                '<h4>3. Problématique :</h4><p class="justify-text"> Dans ce contexte, au cours de la dernière décennie, il y a eu un intérêt croissant pour le domaine de l’art numérique, dû notamment à la popularité croissante des technologies numériques et au nombre croissant de personnes qui les utilisent. Ce mouvement de réinterprétation du numérique a permis aux artistes post-numériques d’établir de nouvelles formes. Ce sont ces nouvelles formes qui vont notamment nous intéresser ici, comment les artistes utilisent les nouvelles technologies pour créer leurs œuvres. De nombreux artistes au début des années 2010 ont utilisé l’impression 3D pour créer des objets physiques, les données des médias sociaux pour créer des œuvres qui commentent des événements actuels ou abordent des questions d’actualité tout travaillant avec des sources de données qu’ils ne contrôlent pas, ces artistes sont en mesure de créer des œuvres qui ont un élément de hasard ou d’imprévisibilité intégré. Enfin, dans la façon de produire des œuvres d’art dite post-digitales, des artistes utilisent les technologies pour créer des œuvres d’art qui ont pour vocation d’exister dans cet entre-deux du monde physique et virtuel. Ce sera notamment ce dernier point qui nous intéressera dans ce mémoire <br></br>Cette utilisation des technologies dans le milieu artistique permet aux spectateurs d’interagir avec l’œuvre d’une manière complètement nouvelle. Il permet également une expérience de visionnement plus immersive et interactive. Dans l’ensemble, le mouvement post-digital a conduit à une reconsidération de la question de la matérialité numérique. En comprenant comment les œuvres d’art numériques sont composées d’éléments physiques et virtuels. C’est en cette « vibration entre le physique et le numérique » que se concentre un paradoxe : comment la tension entre la physicalité des moyen de productions devenus « invisibles » et la numérisation d’une culture post-digitale peut produire un ensemble d’œuvres qui tendent à prouver une matérialité. Idéologiquement, aujourd’hui les productions numériques sont définies plus que jamais comme physiques tant comme des support d’exemplification que la matérialité des données numérique comme flux ou courant électrique, existant dans le monde comme des objets tridimensionnels ou palpable. Néanmoins, d’autre part, la culture post-digitale est quant à elle de plus en plus définie par son conceptualisme et sa numérisation impalpable. Cette tension entre le physique et le numérique a de profondes implications sur la façon dont nous comprenons et interagissons avec le monde actuel. En ce sens, au cours de cette recherche, nous chercherons à définir en quoi malgré les paradoxes évoqués précédemment, les œuvres d’art numériques influent notre conception contemporaine des mondes qui nous entoure par le biais d’un changement de paradigme de la conception « dé(s)matérialité(s) » au sein de notre ère « post-digitale ».</p><br></br><h4>4.Méthodologie: De l’exploration esthétique à l’écriture automatisée:</h4><p class="justify-text">La création artistique contemporaine, telle qu’elle est explorée dans cette thèse, se trouve au cœur d’une ère numérique complexe où la matérialité devient une notion changeante. La recherche menée dans le cadre de ce mémoire se situe à la croisée de l’esthétique de l’art contemporain, de la philosophie et des technologies émergentes. Notre méthodologie, guidée par une quête profonde de compréhension, allie plusieurs approches, chacune contribuant à la construction de ce discours sur la matérialité du numérique. Notre exploration débute donc par une immersion par la recherche bibliographique constitué d’un ensemble d’écrits d’ores et déjà introduit au sein de cette introduction tel que Marisa Olson, Gene McHugh, Artie Vierkant, Andréa Pinotti ou encore Maurizio Ferraris. Ces écrits d’auteurs contemporains, pose ainsi les fondements qui sous-tendent la notion de matérialité, et nous servent de boussole initiale. Cette phase initiale nous a permis d’élaborer une vision conceptuelle solide de notre sujet.<br></br>Dans notre quête de compréhension esthétique, nous nous sommes tournés vers les créations d’artistes plasticiens contemporains tels que Gregory Chatonsky, Artie Vierkant, Timur Si-Quin, Katja Novitskova ou encore Ian Cheng qui, par leur travail, explorent les frontières mouvantes entre le tangible et l’intangible dans le numérique. L’analyse de leurs œuvres a enrichi notre approche en lui apportant une dimension pratique et artistique. En tant qu’artiste plasticien, la recherche pratique artistique a été intégrée comme un élément essentiel de cette méthodologie. Nous avons cherché à fusionner notre expérience en tant qu’artiste avec les concepts théoriques pour apporter une perspective unique à cette étude <br</br>Le numérique, en tant que sujet central, exigeait une approche elle aussi numérique. Ainsi, nous avons entièrement codé, développé et entraîné une GAN (Generative Adversarial Network ou Réseaux Antagoniste de Neuronne) capable de s’auto-alimenter. Le terme d’Intelligence Artificielle ne sera pas utilisé ici, cette terminologie est tirée dans la littérature de science-fiction notamment issus de l’age d’or de la science-fiction situé entre 1938-1946 où des auteurs comme Arthur C. Clark ou encore Isaac Asimov pose les fondations de ce que l’on nomme « intelligence artificielle ». Dans cette littérature, L’intelligence artificielle est généralement représentée comme une forme de conscience ou de pensée autonome, souvent dotée d’émotions, de conscience de soi et d’une compréhension profonde du monde. Ces IA de science-fiction sont souvent des entités intelligentes et conscientes qui peuvent rivaliser avec, ou même dépasser, les êtres humains en termes de compréhension, de créativité et de prise de décision. Les média de masse ont pour des facilité de compréhension créer un raccourci entre GAN et IA pour rendre compréhensible ce qu’est cette technologie. Or, dans la réalité, les systèmes d’intelligence artificielle que nous avons aujourd’hui, y compris les chatbots comme chatGPT, Dall-e, Stablediffusion, sont très différents. Ce sont des programmes informatiques sophistiqués qui utilisent des techniques d’apprentissage de Deep-Learning pour analyser des données, détecter des modèles et générer des réponses. Des réponses qui simulent une vérité. Ils n’ont pas de conscience, d’émotions ni de compréhension profonde du monde. Ils ne sont pas autonomes au sens où ils ne peuvent pas penser ou prendre des décisions indépendamment de leur programmation et de leurs données d’entraînement. En outre, ils ne possèdent pas de conscience de soi ni de volonté propre. Les GAN ne sont que des simulacre d’Intelligence Artificielle qui simulent une pseudo vérité. De fait, la manière dont les GAN sont entraîné fait qu’elle produisent des réponses en suspension qui sont dans un entre-deux. Pour le comprendre, permettez moi de vous en expliquer le fonctionnement. L’algorithme repose sur le concept de duel entre deux réseaux neuronaux, d’où le terme "adversarial" dans son nom. Imaginez ces deux réseaux comme deux personnes, un faussaire (qui « génère » des fausses œuvres) et un expert en détection de faux (capable discriminer une vraie œuvre d’une fausse). Au début de l’expérience, le faussaire n’a aucune compétence et ne fait que produire du bruit. L’expert en détection examine ce que le faussaire a créé et essaie de déterminer si c’est authentique (comme une véritable œuvre d’art) ou faux (comme une contrefaçon). Le discriminateur est formé à partir d’exemples d’œuvres authentiques pour qu’il puisse distinguer le vrai du faux. C’est là que le "duel" commence. Le faussaire essaie de produire quelque chose de plus authentique, tandis que le discriminateur essaie de devenir de plus en plus habile à repérer les faux. Ils s’améliorent tous deux au fil du temps grâce à un processus d’embranchement semblable aux théories de l’évolution de Charles Darwin ou une bonne réponse génère un nouvel embranchement d’où naîtra plusieurs autres branches. Le faussaire apprend de l’expert en détection en essayant de tromper ce dernier. Il ajuste constamment ses créations pour les rendre plus authentiques, en fonction des commentaires de l’expert. L’expert apprend également à repérer les faux de mieux en mieux. Ainsi, aucune réponse produite par une GAN n’est objectivement exact, elles peuvent produire du discours cohérent en puisant dans leur immense base de donnée en produisant un discours qui tente de nous duper en produisant une pseudo vérité. Dans le cadre de cette recherche, il ne s’agit pas d’une volonté de coller à une fascination généralisé par ces outils, de fait, il ne sont en rien nouveau. Dans le milieu de la recherche en Intelligence Articielle nous sommes actuellement dans un « été canniculaire », l’été le plus chaud de la recherche centré sur ces technologie, et se situe chronologiquement après deux hivers de désillusion. Notre GAN n’a pas l’ambition des grandes firmes à vouloir simuler une IA, cette production technologique a été conçue comme une matière d’expression didié à nos propres réflexions concernant ces questions de matérialité du numérique. Cette GAN a été nourrie et entraînée à partir de données textuelles variées mais restreinte comparré à l’imensité du Dataset avec lequel est nourri ChatGPT, ce dataset est composé d’un ensemble de texte préparés allant des textes académiques, à nos propres analyses des œuvres initialement étudié pour ce mémoire jusqu’à nos propres textes issus de nos œuvres. Le développement de ce mémoire est généré selon trois modalités de chatbot, chacune incarnant une modalité d’écriture particulière. Le premier chatbot est issus d’un ensemble de textes allant dans le sens des thèses avancés dans ce mémoire et génère un discours d’un style académique, établissant les bases théoriques. Le deuxième, au contraire, adopte une posture contradictoire, l’ensemble des textes sur lequel est entrainé ce chatbot sont en totale contradiction de nos thèses proposant une véritable antithèse, un avocat du diable numérique aux antipodes des attendus universitaire. Le troisième chatbot se nourrit des textes produits par les deux précédents chatbots issus des questions que vous pourriez leur poser. Ce dernier chatbots etant nourri uniquement de discours de semi-vérité plongera progressivement dans un langage répétitif et abstrait au vu de l’ambiguité de son dataset, créant une expérience sensible de l’autophagie comme système tendant à traduire cette matérialité du numérique.<br></br>Cette méthodologie, fondée sur la diversité des approches, cherche à révéler comment le numérique s’autophage et se rematérialise grâce à l’intelligence artificielle. Elle transcende les frontières de la recherche traditionnelle pour engager une conversation philosophique et esthétique sur la matérialité du monde contemporain. Les chatbots, en tant que vecteurs d’interaction, encouragent l’engagement actif du lecteur dans cette exploration, créant ainsi une expérience immersive et participative.</p>', //The text to be written in the main part of the mini window (can contain HTML)
+                'Windows 95', //The text to be written in the title bar of the mini window
+                1000, //Distance from the left edge of the page to start
+                150, //Distance from the top edge of the page to start
+                380, //Width of the mini window
+                '#00007f', //The background colour of the title bar of the mini window
+                '#ffffff', //The background colour of the main part of the mini window
+                'miniwinimages/logo.png', //The location of the logo image in the top left corner (16px x 16px)
+                'miniwinimages/min.gif', //The location of the minimise image (16px x 16px)
+                'miniwinimages/restore.gif', //The location of the restore image (16px x 16px)
+                'miniwinimages/cross.gif', //The location of the 'close window' image (16px x 16px)
+                'miniwinimages/max.gif', //The location of the maximise image (16px x 16px)
+                'miniwinimages/handle.gif', //The location of the drag handle image (8px x 8px) - '' if not resizable
+                1, //Initial window visibility (0 = hidden, 1 = maximised, 2 = minimised)
+                false, //Dragable portion (true = entire window, false = title bar only)
+                //Some browsers may have problems using the minimise/maximise/close buttons
+                //if you use entire window.
+                contNt.getMenuCode(), //Only used in DOM browsers - HTML to be put just above the main part of the window -
+                //this MUST NOT contain any 'div' elements - this is designed to be used along with my
+                //display based menu script to provide menus in the mini windows
+                true //Only used in DOM browsers (not Konqueror or IE Mac) - should the window be scrollable
+                );
+                createMiniWinLayer(
+                '<h4>5. Objectifs du mémoire:</h4><p class="justify-text">Ce mémoire a pour objectif de mettre en avant si la création artistique démontre que toutes les couches de notre réalité ne font plus qu’un avec les monde numériques et inversement, précisément par le biais d’une production numérique. Et ce, au point où une machine peut produire de l’idée. Idée qui jusqu’à aujourd’hui était considérée comme purement immatérielle étant informe et produit de la conscience de l’être vivant. Ici, le concept d’idée aussi immatériel qu’il a pu être considéré devient matériel par la création la plus pure du numérique : une machine intelligente. Dans le paysage artistique contemporain, émergent des pratiques novatrices qui s’aventurent aux frontières du numérique, questionnant la nature même de la création artistique et son rapport à l’autoréflexivité. Au cœur de cette exploration se trouve le concept d’autophagie artistique, une démarche singulière où les œuvres dévorent et se régénèrent, engendrant une dynamique d’altération du numérique pour en révéler sa matérialité intrinsèque. En tant que chercheur et spécialiste de l’art contemporain, nous nous attacherons dans ce mémoire à étudier comment l’utilisation de l’intelligence artificielle (IA) devient un levier puissant au service de cette autophagie artistique, et ce, en dialogue avec les réflexions majeures émises par Nicolas Negroponte et les investigations sur le geste d’effacer de Maurice Frechuret.<br></br>La vision éclairée de Nicolas Negroponte, pionnier de la dématérialisation du numérique, résonne de manière captivante avec le mouvement autophage que je m’emploie à décortiquer. Lorsque le virtuel se fait avaler par l’acte même de la création, il en résulte une matérialité nouvelle qui transcende la simple virtualité, faisant écho à la profonde transformation évoquée par Negroponte. À travers des œuvres créées pour être dévorées par des machines, des algorithmes ou d’autres compositions artistiques, l’art autophage révèle une essence cachée du numérique, le rendant tangible, palpable et soumis à un processus perpétuel de reconfiguration.<br<</br>Cette investigation s’ouvre également sur les implications philosophiques et conceptuelles de l’utilisation de l’IA dans la création artistique et la recherche. En repoussant les limites de l’automatisation créative, se pose inévitablement la question du contrôle de l’artiste sur l’œuvre ainsi que celle de l’interaction avec le public. Mon approche explore ces enjeux, suggérant que l’IA, loin de supplanter la dimension humaine de la création, en devient un prolongement, une dimension performativité où le processus d’écriture lui-même se transforme en une œuvre d’art mouvante.<br<</br>Ainsi, ce mémoire propose une plongée au cœur de la question de la matérialité du numérique, révélant comment l’art numérique s’impose comme un puissant catalyseur de cette thèse. À travers l’analyse des œuvres autophages émergentes, nourries par la fusion de l’art et de l’intelligence artificielle, j’aspire à éclairer la mutation de notre perception du numérique et de la créativité, ouvrant des horizons nouveaux pour l’art contemporain et ses potentialités inépuisables.</p>', //The text to be written in the main part of the mini window (can contain HTML)
+                'Windows 95', //The text to be written in the title bar of the mini window
+                1200, //Distance from the left edge of the page to start
+                20, //Distance from the top edge of the page to start
+                500, //Width of the mini window
+                '#00007f', //The background colour of the title bar of the mini window
+                '#ffffff', //The background colour of the main part of the mini window
+                'miniwinimages/logo.png', //The location of the logo image in the top left corner (16px x 16px)
+                'miniwinimages/min.gif', //The location of the minimise image (16px x 16px)
+                'miniwinimages/restore.gif', //The location of the restore image (16px x 16px)
+                'miniwinimages/cross.gif', //The location of the 'close window' image (16px x 16px)
+                'miniwinimages/max.gif', //The location of the maximise image (16px x 16px)
+                'miniwinimages/handle.gif', //The location of the drag handle image (8px x 8px) - '' if not resizable
+                1, //Initial window visibility (0 = hidden, 1 = maximised, 2 = minimised)
+                false, //Dragable portion (true = entire window, false = title bar only)
+                //Some browsers may have problems using the minimise/maximise/close buttons
+                //if you use entire window.
+                contNt.getMenuCode(), //Only used in DOM browsers - HTML to be put just above the main part of the window -
+                //this MUST NOT contain any 'div' elements - this is designed to be used along with my
+                //display based menu script to provide menus in the mini windows
+                true //Only used in DOM browsers (not Konqueror or IE Mac) - should the window be scrollable
+                );
+
+
+        </script>
+
+    </div>
+
+    <address><a href="">Ce site</a> a été crée par <a href="mailto:ferreira.thomas99@gmail.com"> FERREIRA Thomas</a>.</address>
+    <!-- DO NOT follow this link - anti spider abuse -->
+    <div style="display:none;speak:none;"><a href="/spdrwarn.html" onclick="return false;">Don't click this link unless you want to be banned from our site.</a></div>
+</body>
+
+</html>

@@ -1,0 +1,946 @@
+/* This partially simulates the old style I had for this site */
+
+/* Please do not tell me that this file does not validate - it is valid, but the W3C's CSS validator is broken */
+
+html,
+body {
+    font-family: serif;
+    color: #009;
+    background-color: #20226c;
+    margin: 0;
+    padding: 0px;
+}
+.justify-text {
+ text-align: justify;
+}
+h1 {
+    margin: 10px 10px 10px 225px;
+    padding: 40px;
+    text-align: center;
+    font-size: 35px;
+    background-color: #ddf;
+    border: 2px solid #d3a813;
+}
+
+#content {
+    background-color: #d2cbff;
+    margin: 10px 10px 10px 225px;
+    border: 2px solid #d3a813;
+    padding: 2px;
+}
+
+address {
+    background-color: #d2cbff;
+    margin: 10px 10px 10px 225px;
+    border: 2px solid #d3a813;
+    font-style: normal;
+}
+
+#loading {
+ background-color: #d2cbff;
+ margin: 10px 10px 10px 225px;
+ border: 2px solid #d3a813;
+ padding: 2px;
+ display: flex;
+}
+
+/* The navigation */
+
+#index {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: #d2cbff;
+    width: 200px;
+    border: 2px solid #d3a813;
+}
+
+#index p{
+width : 200px;
+}
+
+body #index a,
+body #index a:hover {
+    text-decoration: none;
+}
+
+#index h3 {
+    font-size: 1em;
+    color: #00ffff;
+    padding: 5px 7px;
+    margin: 0;
+}
+
+#index a {
+    color: #ffffff;
+}
+
+#index a:hover {
+    color: #00cccc;
+}
+
+#index ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#index li {
+    list-style-type: none;
+    line-height: 122%;
+    display: block;
+    padding: 0px 7px;
+    margin: 0;
+}
+
+#index li.currentpage a {
+    background-color: #440000;
+}
+
+#index a {
+    text-decoration: none;
+}
+
+#index a:focus,
+#index a:hover {
+    text-decoration: underline;
+}
+
+#index .accessible {
+    display: none;
+}
+
+/* This form will never look perfect, because different browsers apply different quirks models to different input types.
+Most cannot work with percentages properly, and and Mac Aqua will not let me style them at all. */
+
+#index form,
+#index form p {
+    margin: 0;
+    padding: 0;
+    line-height: 100%;
+    text-align: center;
+}
+
+#index form p {
+    padding: 1px;
+}
+
+input.searchbybut {
+    width: 70%;
+    padding: 2px;
+}
+
+input.searchbut {
+    width: 70%;
+    padding: 2px 10px;
+}
+
+/* next/prev links */
+
+#guide {
+    font-weight: bold;
+    list-style: none;
+    height: 1.5em;
+}
+
+#guide li {
+    text-align: right;
+    width: 45%;
+    float: left;
+}
+
+#guide li:first-child {
+    text-align: left;
+}
+
+#content p.lastmod {
+    font-size: 75%;
+    text-align: right;
+}
+
+/* Browser bug notes */
+
+.browserbugs {
+    color: #550000;
+    font-size: 0.6em;
+    text-transform: uppercase;
+}
+
+.browserbugs li {
+    margin-top: 0;
+}
+
+/* advanced search form */
+
+form ul#srchtut {
+    float: left;
+    margin: 0 1em 0 0;
+}
+
+#searchform {
+    margin: 0;
+    padding: 0;
+}
+
+#content fieldset {
+    border: 1px solid #d3a813;
+    padding: 0.5em;
+}
+
+#searchform ul,
+#searchform li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+#searchform ul {
+    margin-bottom: 1.2em;
+}
+
+ul.outersearchresults,
+ul.outersearchresults li {
+    margin: 0;
+    margin-top: 1em;
+    padding: 0;
+}
+
+ul.outersearchresults {
+    margin-top: 0;
+    padding-left: 1.3em;
+}
+
+ul.searchresults,
+ul.searchresults li,
+ul.searchresults h5,
+ul.searchresults h6,
+ul.searchresults blockquote,
+ul.searchresults p {
+    list-style-type: none;
+    margin: 0 0 0.7em 0;
+    padding: 0;
+}
+
+ul.searchresults h5,
+ul.searchresults h6 {
+    font-size: 1em;
+    margin: 1.3em 0 0.2em;
+}
+
+ul.searchresults img {
+    border: 0px solid #fff;
+}
+
+#searchstring {
+    width: 70%;
+}
+
+#submitbut {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/* script lists */
+
+ul.scriptlist {
+    list-style-type: none;
+    margin: 0 0 1em;
+    padding: 0;
+}
+
+ul.scriptlist li {
+    list-style-type: none;
+    margin: 0 0 0.1em 1.5em;
+    padding: 0;
+}
+
+span.icons {
+    width: 66px;
+    display: inline-block;
+}
+
+span.icons img {
+    margin: 0 3px;
+}
+
+.supy {
+    background-color: #9f9;
+}
+
+.supp {
+    background-color: #ff9;
+}
+
+.supn {
+    background-color: #f99;
+}
+
+.supw {
+    background-color: #aaf;
+}
+
+dl.classkey dt {
+    float: left;
+    width: 1em;
+    margin-right: 5px;
+}
+
+dl.classkey dd {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* email lists */
+
+ol.emaillist li {
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+ol.emaillist h4 {
+    margin: 0;
+    padding: 0;
+}
+
+ol.emaillist p {
+    margin: 0;
+    padding: 0;
+}
+
+#content ol.emaillist p.meta {
+    font-size: 0.7em;
+    color: #777aaa;
+}
+
+ol.emaillist ul {
+    margin: 0;
+    padding: 0;
+}
+
+ol.emaillist ul li {
+    margin: 0 0 0 1.2em;
+    padding: 0;
+}
+
+div.inbox {
+    border: 1px solid #040;
+    margin: 10px;
+    padding: 10px;
+    background-color: #efd;
+    color: #000;
+}
+
+div.outbox {
+    border: 1px solid #009;
+    margin: 10px;
+    padding: 10px;
+    background-color: #eef;
+    color: #000;
+}
+
+div.inbox pre,
+div.outbox pre {
+    overflow: visible;
+    display: table;
+    font-size: 0.8em;
+    border: 0px solid #fff;
+    padding: 0;
+    background-color: inherit;
+}
+
+div.inbox table,
+div.outbox table {
+    width: 75%;
+}
+
+div.inbox th,
+div.outbox th {
+    text-align: left;
+    width: 6em;
+    color: #fff;
+}
+
+div.inbox td,
+div.outbox td {
+    color: #000;
+}
+
+div.inbox a,
+div.outbox a {
+    color: #00d;
+}
+
+div.inbox td a,
+div.outbox td a {
+    color: #00f;
+}
+
+div.inbox a:hover {
+    background-color: #bca;
+    color: #00d;
+}
+
+div.outbox a:hover {
+    background-color: #aac;
+    color: #00d;
+}
+
+div.inbox th {
+    background-color: #040;
+}
+
+div.inbox td {
+    background-color: #cdb;
+}
+
+div.outbox th {
+    background-color: #004;
+}
+
+div.outbox td {
+    background-color: #ccd;
+}
+
+span.newUp {
+    color: #d00;
+}
+
+ul.badexamples {
+    color: red;
+}
+
+ul.goodexamples {
+    color: green;
+}
+
+/* tree view */
+
+ul.treeview,
+ul.treeview ul,
+ul.treeview li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+ul.treeview {
+    margin: 1em 0;
+}
+
+ul.treeview ul {
+    padding-left: 0.3em;
+}
+
+#content ul.treeview li {
+    text-align: left;
+}
+
+ul.treeview ul li {
+    border-left: 1px dotted #000;
+    padding-left: 13px;
+    text-align: left;
+    background: url(images/dotted.gif) scroll no-repeat 1px 0.8em;
+}
+
+ul.treeview ul li.last {
+    border-left-width: 0px;
+    padding-left: 14px;
+    background: url(images/dottedangle.gif) scroll no-repeat left top;
+}
+
+ul.treeview a {
+    text-decoration: none;
+}
+
+ul.treeview a:hover {
+    text-decoration: underline;
+}
+
+dfn {
+    font-style: normal;
+    font-weight: bold;
+}
+
+dfn.o {
+    color: rgb(0, 119, 0);
+}
+
+dfn.p {
+    color: rgb(50, 50, 200);
+}
+
+dfn.c {
+    color: rgb(200, 0, 0);
+}
+
+dfn.e {
+    color: rgb(0, 0, 0);
+}
+
+dfn.m {
+    color: rgb(150, 0, 119);
+}
+
+/* browser page */
+
+h3.browlist {
+    background-color: #20226c;
+    color: #d2cbff;
+}
+
+/* thumbnails */
+
+.fixednote {
+    display: none;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #337;
+    border: 2px solid #d3a813;
+    color: #00ffff;
+    width: 200px;
+}
+
+*>.fixednote {
+    display: block;
+}
+
+.fixednote ul,
+.fixednote li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.fixednote li {
+    margin: 2px;
+}
+
+.fixednote a,
+.fixednote a img {
+    display: block;
+}
+
+.fixednote a img {
+    border: 1px solid #20226c;
+}
+
+ul.thumblist,
+ul.thumblist li {
+    margin-left: 0;
+    padding-left: 0;
+    list-style-type: none;
+}
+
+ul.thumblist li {
+    height: 102px;
+    padding: 2px 0;
+}
+
+ul.thumblist>li {
+    height: auto;
+    min-height: 102px;
+}
+
+ul.thumblist a {
+    display: block;
+    float: left;
+    margin: 0 5px 0 0;
+    width: 100px;
+}
+
+ul.thumblist a img {
+    border: 1px solid #20226c;
+    display: block;
+}
+
+/* general element styles */
+
+h2 {
+    background-color: #20226c;
+    color: #d2cbff;
+    text-align: center;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+th {
+    background-color: #009;
+    color: #d2cbff;
+}
+
+td,
+th {
+    border: 1px solid #fff;
+    border-top-color: #777;
+    border-left-color: #777;
+}
+
+table {
+    border-spacing: 0;
+    border: 1px solid #fff;
+    border-bottom-color: #777;
+    border-right-color: #777;
+}
+
+table.noborder,
+table.noborder td,
+table.noborder th {
+    border: 0px solid #fff;
+}
+
+a {
+    color: #005555;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #000055;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a img {
+    border: none;
+}
+
+img[usemap] {
+    border: none;
+}
+
+p.notinflow {
+    float: right;
+    margin-left: 0.7em;
+    margin-bottom: 0.3em;
+}
+
+sup {
+    vertical-align: top;
+}
+
+pre {
+    font-family: monospace;
+    font-size: 12px;
+    padding: 5px 2% 16px;
+    margin: 20px auto;
+    border: 1px solid #20226c;
+    width: 95%;
+}
+
+/* IE mac sucks, the PREs disappear completely \*/
+
+pre {
+    overflow: auto;
+    overflow-y: hidden;
+}
+
+/* Yes, I hate hacks, but I would prefer that IE Mac users were able to read this page */
+
+code,
+var,
+samp,
+kbd {
+    color: rgb(0, 0, 0);
+    font-family: monospace;
+    white-space: nowrap;
+    font-style: normal;
+}
+
+pre code {
+    white-space: pre;
+}
+
+code.bad {
+    color: red;
+}
+
+code del {
+    color: red;
+    text-decoration: none;
+}
+
+span.word {
+    white-space: nowrap;
+}
+
+label {
+    cursor: pointer;
+}
+
+span.comment {
+    color: #006f00;
+}
+
+button {
+    text-align: left;
+}
+
+img,
+object {
+    max-width: 100%;
+}
+
+
+
+@media print {
+    body {
+        width: auto;
+    }
+    html {
+        padding: 12px 8px;
+    }
+    html,
+    body,
+    h1,
+    pre,
+    address,
+    #content {
+        background: white;
+        color: black;
+    }
+    h1,
+    #content,
+    address {
+        margin: 0px 0px 10px;
+    }
+    #content>h2 {
+        page-break-before: always;
+    }
+    #content>h2:first-child {
+        page-break-before: avoid;
+    }
+    address::before {
+        content: "https://ferreirathomasarts.wordpress.com/- ";
+    }
+    pre,
+    pre var,
+    pre samp,
+    pre kbd,
+    #content pre code {
+        white-space: pre-wrap;
+    }
+    #index,
+    #guide {
+        display: none;
+    }
+    * * * .fixednote {
+        display: none;
+    }
+    #tocont ul,
+    #tocont li {
+        margin-left: 0;
+        padding-left: 0;
+        list-style-type: none;
+    }
+    #tocont a {
+        text-decoration: none;
+    }
+    #tocont a::after {
+        content: leader(".") target-counter(attr(href), page);
+    }
+}
+
+/* Handheld media - because I know what I am doing */
+
+@media handheld {
+    /* I could combine this with the media query, but I want to be nice to device browsers that understand handheld media
+	but not media queries */
+    * {
+        font-family: sans-serif;
+        font-size: 11px !important;
+    }
+    h1 {
+        font-size: 1.2em !important;
+    }
+    h2 {
+        font-size: 1.1em !important;
+    }
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1em !important;
+    }
+    body {
+        width: auto;
+    }
+    html {
+        padding: 4px;
+    }
+    pre,
+    pre var,
+    pre samp,
+    pre kbd,
+    #content pre code {
+        white-space: pre-wrap;
+    }
+    pre {
+        display: table;
+    }
+    #content,
+    address,
+    h1 {
+        margin: 2px 0px;
+        padding: 2px;
+    }
+    #index {
+        width: auto;
+        position: static;
+        margin: 0;
+    }
+    #guide {
+        padding: 0;
+    }
+    #guide li {
+        text-align: center !important;
+        width: 47%;
+    }
+    *>.fixednote {
+        display: none;
+    }
+    ul.thumblist,
+    body ul.thumblist li {
+        margin: auto;
+        padding: 1px;
+        list-style-type: disc;
+        height: auto;
+        min-height: 0;
+    }
+    ul.thumblist a {
+        float: none;
+        margin: 0 auto;
+        width: auto;
+    }
+    code,
+    var,
+    samp,
+    kbd {
+        white-space: normal;
+    }
+    iframe,
+    img,
+    textarea,
+    select {
+        max-width: 100%;
+    }
+}
+
+@media speech,
+aural,
+handheld,
+braille,
+tty {
+    #index .accessible {
+        display: block;
+        margin: 5px 0;
+    }
+}
+
+/* Media queries to be nice to browsers that are good enough */
+
+/* These are part of CSS 3, so:
+1. If the browser does not understand them, it will ignore them, and that is OK.
+2. If your browser flags them as errors, it is is because your browser's CSS support is not high enough;
+   complain to them, not me. */
+
+@media all and (max-width: 550px) {
+    body {
+        width: auto;
+    }
+    html {
+        padding: 4px;
+    }
+    #content,
+    address,
+    h1 {
+        margin: 2px 0px;
+        padding: 2px;
+    }
+    #index {
+        width: auto;
+        position: static;
+        margin: 0;
+    }
+    #index .accessible {
+        display: block;
+        margin: 5px 0;
+    }
+    *>.fixednote {
+        display: none;
+    }
+    ul.thumblist,
+    body ul.thumblist li {
+        margin: auto;
+        padding: 1px;
+        list-style-type: disc;
+        height: auto;
+        min-height: 0;
+    }
+    ul.thumblist a {
+        float: none;
+        margin: 0 auto;
+        width: auto;
+    }
+}
+
+@media all and (max-width: 450px) {
+    * {
+        font-family: sans-serif;
+        font-size: 11px !important;
+    }
+    h1 {
+        font-size: 1.2em !important;
+    }
+    h2 {
+        font-size: 1.1em !important;
+    }
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 1em !important;
+    }
+    code,
+    var,
+    samp,
+    kbd {
+        white-space: normal;
+    }
+    input.searchbut {
+        width: auto;
+    }
+    iframe,
+    img,
+    textarea,
+    select {
+        max-width: 100%;
+    }
+}
+
+@media print {
+    /* Has to be in its own block because this part of CSS 3 upsets KHTML (Konqueror, Safari, and OmniWeb) and makes it
+	   ignore the entire media block */
+    title {
+        string-set: header content();
+    }
+    #content h2 {
+        string-set: header2 content();
+    }
+    @page {
+        @bottom-center {
+            content: counter(page)" of "counter(pages);
+        }
+        @top-left {
+            content: string(header);
+        }
+        @top-right {
+            content: string(header2);
+        }
+    }
+}
