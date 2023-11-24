@@ -130,10 +130,11 @@
     </div>
 
     <div id="content">
-         <div>
-    <label for="question">Posez une question :</label>
-    <input type="text" id="question" placeholder="Votre question...">
-    <button onclick="poserQuestion()">Poser la question</button>
+        <h3>Chatbot GAN - Partie 1: Norma --- </h3> 
+        <div>
+    <label for="question">Ask your question :</label>
+    <input type="text" id="question" placeholder="Your question...">
+    <button onclick="poserQuestion()">Ask</button>
              
 </div>
 
@@ -163,7 +164,7 @@
         .then(response => response.json())
         .then(data => {
             // Affichez la réponse dans la boîte de réponse
-            document.getElementById("reponse-box").innerHTML = "Réponse : " + data.response;
+            document.getElementById("reponse-box").innerHTML = "Norma Chatbot Answer : " + data.response;
             loading.style.display = "none";
         })
         .catch((error) => {
@@ -194,15 +195,8 @@ setInterval(updateStatus, 10000);
 </script>
 
 
-        <h3>IA 1: Norma</h3>
-        <div>
-        <input type="text" id="question-input" placeholder="Posez votre question...">
-        <button id="ask-button">Poser</button>
-    </div>
-    <div class="answer-box">
-        <p id="answer"></p>
-    </div>
-        <h3>IA 2: Cont</h3>
+        
+        <h3>Chatbot GAN - Partie 1: Cont --</h3>
         <div>
         <input type="text" id="question-input" placeholder="Posez votre question...">
         <button id="ask-button">Poser</button>
