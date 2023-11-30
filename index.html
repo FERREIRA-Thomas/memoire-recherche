@@ -56,7 +56,7 @@
 
     <h2>APP STATUT</h2>
 <div id="status">
-   <p> Statut Actuel: OFFLINE<!-- Le statut du notebook sera affiché ici -->
+   <p> Statut Actuel: ONLINE<!-- Le statut du notebook sera affiché ici -->
    </p>
 </div>  
 
@@ -154,7 +154,7 @@
         loading.style.display = "block";
 
         // Effectuez une requête AJAX vers l'API Flask
-        fetch('https://b74f-35-222-110-242.ngrok-free.app/ask', {
+        fetch('https://448c-34-132-4-235.ngrok-free.app/ask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -173,7 +173,7 @@
     }
 
     function updateStatus() {
-    fetch('https://b74f-35-222-110-242.ngrok-free.app/status', {
+    fetch('https://448c-34-132-4-235.ngrok-free.app/status', {
         method: 'GET',
         })
     .then(response => response.json())
