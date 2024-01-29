@@ -171,7 +171,7 @@
         loading.style.display = "block";
 
         // Effectuez une requête AJAX vers l'API Flask
-        fetch('https://6ce7-35-193-170-156.ngrok-free.app/ask', {
+        fetch('https://d4da-34-148-148-175.ngrok-free.app/ask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -222,6 +222,36 @@ setInterval(updateStatus, 10000);
     <div class="answer-box">
         <p id="answer"></p>
     </div>
+        <script>
+    function poserQuestion() {
+        // Récupérez la question depuis l'input
+        var question = document.getElementById("question").value;
+        var loading = document.getElementById("loading");
+        loading.style.display = "block";
+
+        // Effectuez une requête AJAX vers l'API Flask
+        fetch('https://97bb-34-106-160-157.ngrok-free.app/ask', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 'question': question }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Affichez la réponse dans la boîte de réponse
+            document.getElementById("reponse-box").innerHTML = "Norma Chatbot Answer : " + data.response;
+            loading.style.display = "none";
+        })
+        .catch((error) => {
+            console.error('Erreur lors de la requête:', error);
+        });
+    }
+    </script>
+
+
+
+        
         <h3>Chatbot GAN - Partie 3: Cont --- Not Working</h3>
         <div>
     <label for="question">Ask your question :</label>
