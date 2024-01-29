@@ -217,12 +217,19 @@ setInterval(updateStatus, 10000);
         <div>
     <label for="question">Ask your question :</label>
     <input type="text" id="question" placeholder="Your question...">
-        <button id="ask-button">Poser</button>
-    </div>
-    <div class="answer-box">
-        <p id="answer"></p>
-    </div>
-        <script>
+    <button onclick="poserQuestion()">Ask</button>
+             
+</div>
+
+<div id="loading" style="display: none;">
+ <p>Loading...</p>
+</div>  
+
+<div id="reponse-box">
+    <!-- La réponse de l'IA sera affichée ici -->
+</div>
+        
+<script>
     function poserQuestion() {
         // Récupérez la question depuis l'input
         var question = document.getElementById("question").value;
