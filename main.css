@@ -44,6 +44,22 @@ address {
  display: flex;
 }
 
+#loading2 {
+ background-color: #d2cbff;
+ margin: 10px 10px 10px 225px;
+ border: 2px solid #d3a813;
+ padding: 2px;
+ display: flex;
+}
+
+#loading3 {
+ background-color: #d2cbff;
+ margin: 10px 10px 10px 225px;
+ border: 2px solid #d3a813;
+ padding: 2px;
+ display: flex;
+}
+
 /* The navigation */
 
 #index {
