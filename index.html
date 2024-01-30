@@ -213,41 +213,43 @@ setInterval(updateStatus, 10000);
 
 
         
-        <h3>Chatbot GAN - Partie 2: Cont --- Not Working</h3>
+       <h3>Chatbot GAN - Partie 2: Cont --- Not Working</h3>
+
+        <div>
         <div>
     <label for="question">Ask your question :</label>
-    <input type="text" id="question" placeholder="Your question...">
-    <button onclick="poserQuestion()">Ask</button>
+    <input type="text" id="question2" placeholder="Your question...">
+    <button onclick="poserQuestion2()">Ask</button>
              
 </div>
 
-<div id="loading" style="display: none;">
+<div id="loading2" style="display: none;">
  <p>Loading...</p>
 </div>  
 
-<div id="reponse-box">
+<div id="reponse-box2">
     <!-- La réponse de l'IA sera affichée ici -->
 </div>
-        
-<script>
-    function poserQuestion() {
+
+    <script>
+    function poserQuestion2() {
         // Récupérez la question depuis l'input
-        var question = document.getElementById("question").value;
-        var loading = document.getElementById("loading");
+        var question = document.getElementById("question2").value;
+        var loading = document.getElementById("loading2");
         loading.style.display = "block";
 
         // Effectuez une requête AJAX vers l'API Flask
-        fetch('https://97bb-34-106-160-157.ngrok-free.app/ask', {
+        fetch('https://703b-34-42-29-125.ngrok-free.app/ask2', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ 'question': question }),
+            body: JSON.stringify({ 'question2': question }),
         })
         .then(response => response.json())
         .then(data => {
             // Affichez la réponse dans la boîte de réponse
-            document.getElementById("reponse-box").innerHTML = "Norma Chatbot Answer : " + data.response;
+            document.getElementById("reponse-box2").innerHTML = "Chatbot Answer2 : " + data.response;
             loading.style.display = "none";
         })
         .catch((error) => {
@@ -255,20 +257,56 @@ setInterval(updateStatus, 10000);
         });
     }
     </script>
+</div>
 
+ <h3>Chatbot GAN - Partie 3: Cont --- Not Working</h3>
 
-
-        
-        <h3>Chatbot GAN - Partie 3: Cont --- Not Working</h3>
+        <div>
         <div>
     <label for="question">Ask your question :</label>
-    <input type="text" id="question" placeholder="Your question...">
-        <button id="ask-button">Poser</button>
-    </div>
-    <div class="answer-box">
-        <p id="answer"></p>
-    </div>
-        <div> 
+    <input type="text" id="question3" placeholder="Your question...">
+    <button onclick="poserQuestion3()">Ask</button>
+             
+</div>
+
+<div id="loading3" style="display: none;">
+ <p>Loading...</p>
+</div>  
+
+<div id="reponse-box3">
+    <!-- La réponse de l'IA sera affichée ici -->
+</div>
+
+    <script>
+    function poserQuestion3() {
+        // Récupérez la question depuis l'input
+        var question = document.getElementById("question3").value;
+        var loading = document.getElementById("loading3");
+        loading.style.display = "block";
+
+        // Effectuez une requête AJAX vers l'API Flask
+        fetch('https://703b-34-42-29-125.ngrok-free.app/ask3', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ 'question3': question }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Affichez la réponse dans la boîte de réponse
+            document.getElementById("reponse-box3").innerHTML = "Chatbot Answer2 : " + data.response;
+            loading.style.display = "none";
+        })
+        .catch((error) => {
+            console.error('Erreur lors de la requête:', error);
+        });
+    }
+    </script>
+</div>
+    
+
+            
             <h4>sample question</h4>
             <p>
                 In 50 lines, tell me in which way post-internet art movment proposes a paradigm shift on the question of the digital materiality. <br></br>
