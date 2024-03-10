@@ -56,10 +56,10 @@
 
     <h2>APP STATUT</h2>
 <div id="status">
-   <p> Statut Actuel: OFFLINE<!-- Le statut du notebook sera affiché ici -->
+   <p> Statut Actuel: ONLINE<!-- Le statut du notebook sera affiché ici -->
         <br>&nbsp;<br>
-       <!--Online Since: 24/02/2024 : 13:10-->
-        Last Online: 25/02/2024 : 00:35
+       Online Since: 10/03/2024 : 11:50
+        <!--Last Online: 25/02/2024 : 00:35-->
    </p>
 </div>  
 
@@ -150,7 +150,7 @@
     </div>
 
     <div id="content">
-        <h3>Chatbot GAN - Partie 1: LogicMind -- OFFLINE </h3> 
+        <h3>Chatbot GAN - Partie 1: LogicMind -- ONLINE </h3> 
         <div>
     <label for="question">Ask your question :</label>
     <input type="text" id="question" placeholder="Your question...">
@@ -174,7 +174,7 @@
         loading.style.display = "block";
 
         // Effectuez une requête AJAX vers l'API Flask
-        fetch('https://ee4f-34-27-201-152.ngrok-free.app/ask', {
+        fetch('https://e015-34-73-244-220.ngrok-free.app/ask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -193,7 +193,7 @@
     }
 
     function updateStatus() {
-    fetch('https://2d05-34-86-21-89.ngrok-free.app/status', {
+    fetch('https://e015-34-73-244-220.ngrok-free.app/status', {
         method: 'GET',
         })
     .then(response => response.json())
@@ -216,7 +216,7 @@ setInterval(updateStatus, 10000);
 
 
         
-       <h3>Chatbot GAN - Partie 2: AnarChorus -- OFFLINE</h3>
+       <h3>Chatbot GAN - Partie 2: AnarChorus -- ONLINE</h3>
 
         <div>
         <div>
@@ -262,7 +262,7 @@ setInterval(updateStatus, 10000);
     </script>
 </div>
 
- <h3>Chatbot GAN - Partie 3: MorphoCognita -- OFFLINE</h3>
+ <h3>Chatbot GAN - Partie 3: MorphoCognita -- ONLINE</h3>
 
         <div>
         <div>
