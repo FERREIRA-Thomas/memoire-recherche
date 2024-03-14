@@ -58,8 +58,8 @@
 <div id="status">
    <p> Statut Actuel: OFFLINE<!-- Le statut du notebook sera affiché ici -->
         <br>&nbsp;<br>
-      <!-- Online Since: 10/03/2024 : 11:50-->
-        Last Online: 10/03/2024 : 15:00
+      Online Since: 14/03/2024 : 12:40
+        <!-- Last Online: 10/03/2024 : 15:00-->
    </p>
 </div>  
 
@@ -150,7 +150,7 @@
     </div>
 
     <div id="content">
-        <h3>Chatbot GAN - Partie 1: LogicMind -- OFFLINE </h3> 
+        <h3>Chatbot GAN - Partie 1: LogicMind -- ONLINE </h3> 
         <div>
     <label for="question">Ask your question :</label>
     <input type="text" id="question" placeholder="Your question...">
@@ -174,7 +174,7 @@
         loading.style.display = "block";
 
         // Effectuez une requête AJAX vers l'API Flask
-        fetch('https://e015-34-73-244-220.ngrok-free.app/ask', {
+        fetch('https://74e0-34-138-45-136.ngrok-free.app/ask', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -193,7 +193,7 @@
     }
 
     function updateStatus() {
-    fetch('https://e015-34-73-244-220.ngrok-free.app/status', {
+    fetch('https://74e0-34-138-45-136.ngrok-free.app/status', {
         method: 'GET',
         })
     .then(response => response.json())
